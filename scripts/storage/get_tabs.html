@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<header>
+	<title>Don't mind me!</title>
+	<style>
+		body { text-align: center; padding: 150px; }
+		h1 { font-size: 50px; }
+		body { font: 20px Helvetica, sans-serif; color: #333; }
+		article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+		a { color: #dc8100; text-decoration: none; }
+		a:hover { color: #333; text-decoration: none; }
+	</style>
+</header>
+<body>
+	<article>
+		<h1>Just grabbing all the tabs!</h1>
+		<div>
+			<p id="random"></p>
+			<p>&mdash; Some Programmer (probably)</p>
+		</div>
+	</article>
+
+	<script>
+		var list = [
+			"Walking on water and developing software from a specification are easy if both are frozen.",
+			"It always takes longer than you expect, even when you take into account Hofstadter's Law.",
+			"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+			"Java is to JavaScript what Car is to Carpet.",
+			"There are only two kinds of languages: the ones people complain about and the ones nobody uses",
+			"Linux is only free if your time has no value",
+			"Computer Science is no more about computers than astronomy is about telescopes.",
+			"I Hate Programming. I Hate Programming. I Hate Programming. It works! I Love Programming.",
+			"Engineers are all basically high-functioning autistics who have no idea how normal people do stuff.",
+			"Never trust a programmer in a suit.",
+			"Weeks of coding can save you hours of planning.",
+			"You can stand on the shoulders of giants OR a big enough pile of dwarfs, works either way.",
+			"An idiot with a computer is a faster, better idiot",
+			"There's no test like production",
+			"Code never lies, comments sometimes do",
+			"Focus is saying no to 1000 good ideas",
+			"Design is choosing how you will fail",
+			"People will realize that software is not a product; you use it to build a product",
+			"Fix the cause, not the symptom",
+			"Code is like humor. When you have to explain it, it's bad",
+			"The proper use of comments is to compensate for our failure to express ourself in code",
+			"No one hates software more than software developers",
+			"If you can't deploy your services independently then they aren't microservices",
+			"If I had more time, I would have written a shorter letter",
+			" For the brave souls who get this far: You are the chosen ones" +
+			" the valiant knights of programming who toil away, without rest" +
+			" fixing our most awful code. To you, true saviors, kings of men" +
+			" I say this: never gonna give you up, never gonna let you down" +
+			" never gonna run around and desert you. Never gonna make you cry" +
+			" never gonna say goodbye. Never gonna tell a lie and hurt you",
+			"When I wrote this, only God and I understood what I was doing " +
+			"Now, God only knows",
+			"sometimes I believe compiler ignores all my comments",
+			"Magic. Do not touch.",
+			"#define TRUE FALSE" + " // Happy debugging suckers",
+			"long long ago; /* in a galaxy far far away */ "
+			
+			];
+
+		var randomNumber = Math.floor(Math.random() * list.length);
+		document.getElementById("random").innerHTML = list[randomNumber];
+	
+	</script>
+</body>
+</html>

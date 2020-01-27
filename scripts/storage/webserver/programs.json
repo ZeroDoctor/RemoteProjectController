@@ -1,0 +1,32 @@
+[
+	{
+		"name": "devenv.exe", 
+		"path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\devenv", 
+		"texteditor": false, 
+		"additional": ""
+	},
+	{
+		"name": "Code.exe", 
+		"path": "code",
+		"texteditor": true,
+		"additional": ""
+	},
+	{
+		"name": "sublime_text.exe", 
+		"path": "sublime", 
+		"texteditor": true,
+		"additional": "start"
+	},
+	{
+		"name": "notepad++.exe",
+		"path": "C:\\Program Files (x86)\\Notepad++\\notepad++",
+		"texteditor": false,
+		"additional": ""
+	},
+	{
+		"name": "notepad.exe",
+		"path": "notepad",
+		"texteditor": false,
+		"additional": ""
+	}
+]
