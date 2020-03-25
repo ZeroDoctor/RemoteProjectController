@@ -8,7 +8,7 @@
 #######
 import keyboard
 import subprocess
-from os import listdir
+import os
 from os.path import isfile, join
 
 current_folder = ""
@@ -17,7 +17,6 @@ folders = {"":[]}
 selections = []
 options = 0
 page = 0
-done = False
 
 def get_list(path):
 # 	get list of files in the path directory
@@ -25,7 +24,7 @@ def get_list(path):
 	options = []
 	folder_num = 0
 	# (location, name, ignore, folder = True)
-	for i, f in enumerate(listdir(path)):
+	for i, f in enumerate(os.listdir(path)):
 		if isfile(join(path, f)):
 			ignore = f[1] == '-'
 			options.append((i, f, ignore, False))
@@ -50,6 +49,7 @@ def exec_command(data):
 
 def show_options(files, page):
 	global selections
+	os.system('cls') 
 	print('----------------------\n')
 	print("Page->", page)
 	result = ""
@@ -83,7 +83,7 @@ def nextpage():
 	show_options(options, page)
 
 def push_command(command):
-	global options, selections, page, current_folder, done
+	global options, selections, page, current_folder
 	select = selections[command]
 
 	if select[1][0] == '^':
@@ -93,7 +93,6 @@ def push_command(command):
 		show_options(options, page)
 	else:
 		exec_command(current_folder + "\\" + select[1])
-		done = True
 
 
 def home_folder():
@@ -115,21 +114,17 @@ def main():
 	show_options(options, page)
 	print("press option: ")
 
-	keyboard.add_hotkey('f', nextpage)
-	keyboard.add_hotkey('a', prevpage)
-	keyboard.add_hotkey('b', home_folder)
+	keyboard.add_hotkey('f', nextpage, suppress=True)
+	keyboard.add_hotkey('a', prevpage, suppress=True)
+	keyboard.add_hotkey('b', home_folder, suppress=True)
 
 	for i in range(-1, 9):
-		keyboard.add_hotkey(str(i + 1), push_command, args=[i + 1])
+		keyboard.add_hotkey(str(i + 1), push_command, args=[i + 1], suppress=True)
 
-	while not done:
-		try:
-			if keyboard.is_pressed('esc'):
-				print("\n----------------------\nclosing program...\n")
-				break
-		except Exception as e:
-			print(e)
-			break
+	keyboard.wait('esc')
+
+	keyboard.unhook_all()
+	keyboard.unhook_all_hotkeys()
 
 if __name__ == "__main__":
 	main()
