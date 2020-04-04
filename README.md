@@ -11,11 +11,7 @@ This project is more of a personal project, so theres a lot of moving parts.
 
 ### Chrome Extension
 
-Probably the most annoying to deal with.
-
-Make sure change the path variable in the background.js file to ./chrome_extension/tabpage/get_tabs.html.
-
-This is only temporary due to google, smartly, not giving developer access to users systems. 
+Probably the most annoying to deal with. Make sure to change the path variable in the background.js file to ./chrome_extension/tabpage/get_tabs.html. This is only temporary due to google, smartly, not giving developer access to users systems. 
 
 1. Open the Extension Management page by navigating to chrome://extensions.
 	- The Extension Management page can also be opened by clicking on the Chrome menu, hovering over More Tools then selecting Extensions.
@@ -28,9 +24,10 @@ I say annoying because chrome will repeatly ask to disable the extension due to 
 
 ### %RPC%
 
-The project must be in the Documents folder in order to work.
+The project "must be" in the Documents folder in order to work.
 
 In addition, setup a environmental variable named "RPC" to the Project
+
 ex. setx /M RPC "C:/Users/user_name/Documents/project_name"
 
 ### NPM
